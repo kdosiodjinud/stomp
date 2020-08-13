@@ -26,7 +26,7 @@ class InputStream extends WritableStream implements InputStreamInterface
     public function write($data)
     {
         if ($data === "\x0a") {
-            $this->emit('heart-beat', [new Frame('MESSAGE\nHEART-BEAT')]);
+            $this->emit('heart-beat');
             $data = '';
         }
 
